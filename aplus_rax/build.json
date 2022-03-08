@@ -1,0 +1,11 @@
+{
+  "targets": [
+    "web",
+    "miniapp",
+    "wechat-miniprogram",
+    "bytedance-microapp",
+    "baidu-smartprogram",
+    "kuaishou-miniprogram" 
+  ],
+  "plugins": []
+}

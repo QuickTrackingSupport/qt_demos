@@ -1,0 +1,43 @@
+<view class='page-container-classname'>
+                <view class='event-exposure' capture-bind:touchstart='onAplusTouch' onChildRef='saveChildRef0'>
+  <view class='exposure-auto'>
+    <view class='auto-title'>
+      自动曝光 场景1: 轮播
+    </view>
+    <swiper class='swiper' indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' circular=" " interval='{{interval}}' duration='{{duration}}'>
+      <block a:for='{{swiperImg}}' a:key='{{*this}}' a:for-item='item' ref-numbers='{{swiperImg}}'>
+        <swiper-item class='banner-item' data-keyword='{{index}}' id='index'>
+          <view>
+            <image src='{{item.url}}' alt=" ">
+            </image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='exposure-manual'>
+    <view class='manual-title'>
+      自动曝光 场景2: 瀑布流
+    </view>
+    <view a:for='{{2}}' a:key='{{value}}' class='exposure-grid ListItem' id='{{index}}' ref-numbers='{{2}}'>
+      <view a:for='{{list}}' a:for-item='item' a:key='{{index}}' class='exposure-grid-item' ref-numbers='{{list}}'>
+        <view class='grid-item-box'>
+          <image src='{{item.url}}' alt="">
+          </image>
+          <view>
+            {{ item.name }}
+          </view>
+          <view class='grid-item-detail'>
+            <text>
+              {{ item.price }}+{{index}}
+            </text>
+            <text>
+              {{ item.scale }}+{{index}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+            </view>

@@ -1,0 +1,83 @@
+{
+    "appid": "wxb52ceeb7d2205fcd",
+    "cloudfunctionRoot": "cloudfunctions/",
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "compilation-args": {
+        "common": {
+            "babelSetting": {
+                "ignore": []
+            },
+            "enhance": false,
+            "ignoreTransJs": false
+        },
+        "options": [],
+        "selected": -2
+    },
+    "condition": {
+        "conversation": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "db guide",
+                    "pathName": "pages/databaseGuide/databaseGuide"
+                }
+            ]
+        },
+        "plugin": {
+            "list": []
+        },
+        "search": {
+            "list": []
+        }
+    },
+    "host": "baiduboxapp",
+    "libVersion": "2.20.1",
+    "projectname": "aplus_demo",
+    "setting": {
+        "autoAudits": false,
+        "babelSetting": {
+            "disablePlugins": [],
+            "ignore": [],
+            "outputPath": ""
+        },
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "compileHotReLoad": false,
+        "coverView": true,
+        "enableEngineNative": false,
+        "enhance": true,
+        "es6": true,
+        "minified": true,
+        "minifyWXSS": true,
+        "newFeature": true,
+        "nodeModules": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "scopeDataCheck": false,
+        "showShadowRootInWxmlPanel": true,
+        "uglifyFileName": false,
+        "uploadWithSourceMap": true,
+        "urlCheck": false,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "useCompilerModule": true,
+        "useIsolateContext": true,
+        "useMultiFrameRuntime": true,
+        "userConfirmedBundleSwitch": false,
+        "userConfirmedUseCompilerModuleSwitch": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "extensionJsVersion": "1.21.2",
+            "swanJsVersion": "3.360.26"
+        }
+    }
+}

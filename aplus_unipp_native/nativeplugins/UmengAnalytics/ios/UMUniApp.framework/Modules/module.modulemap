@@ -1,0 +1,6 @@
+framework module UMUniApp {
+  umbrella header "UMUniApp.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@rax-materials/scaffolds-app-js",
+  "author": "rax",
+  "description": "Rax 无线跨端应用工程，使用 JavaScript。",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "rax-app start",
+    "build": "rax-app build",
+    "eslint": "eslint --ext --fix .js,.jsx ./",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "prettier": "prettier **/* --write",
+    "lint": "npm run eslint && npm run stylelint"
+  },
+  "dependencies": {
+    "@uni/apis": "^1.1.9",
+    "@uni/application": "^1.0.7",
+    "@uni/storage": "^1.0.9",
+    "rax": "^1.1.0",
+    "rax-document": "^0.1.0",
+    "rax-image": "^2.0.0",
+    "rax-link": "^1.0.1",
+    "rax-slider": "^3.1.5",
+    "rax-swiper": "^0.1.5",
+    "rax-text": "^2.0.0",
+    "rax-textinput": "^1.4.2",
+    "rax-view": "^2.0.0"
+  },
+  "devDependencies": {
+    "@iceworks/spec": "^1.0.0",
+    "eslint": "^6.8.0",
+    "prettier": "^2.1.2",
+    "rax-app": "^3.0.0",
+    "stylelint": "^13.7.2"
+  },
+  "private": true,
+  "originTemplate": "@rax-materials/scaffolds-app-js"
+}

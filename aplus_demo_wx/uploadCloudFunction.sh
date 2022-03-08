@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e cloud1-2g6s7v665c9ffa50 --n quickstartFunctions --r --project "/Users/guozhixia/Documents/aplus_demos/aplus_demo" --report_start --report

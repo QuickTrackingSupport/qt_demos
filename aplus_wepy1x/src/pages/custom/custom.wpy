@@ -1,0 +1,80 @@
+<style lang="less">
+.event-click {
+    padding: 30px 5%;
+}
+.click-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 30px 0 50px;
+    image {
+        width: 50%;
+        height: 180px;
+    }
+    .click-detail-con {
+        font-size: 18px;
+        line-height: 30px;
+        text {
+          display: block;
+        }
+    }
+}
+.click-purchase {
+    width: 80%;
+}
+</style>
+<template>
+  <view class="event-click">
+   <view class="click-detail">
+    <image src="https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg" alt=""/>
+    <view class="click-detail-con">
+      <view>
+          <view>商品名称：{{detail.product}}</view>
+          <view>商品颜色：{{detail.productColor}}</view>
+          <view>商品ID: {{detail.productId}}</view>
+      </view>
+    </view>
+   </view>
+   <button class="click-purchase" type="primary" @tap="otherEvent">点击购买(自动)</button>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import moduleA from 'module-a' // aliasFields ignore module example
+  import testMixin from '../../mixins/test'
+  import aplusSDK from '../../utils/umengAdaptor.js'
+
+  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
+
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '自定义事件'
+    }
+    components = {
+    }
+
+    mixins = [testMixin]
+
+    data = {
+      detail: {
+        product: '水杯',
+        productColor: '黄色',
+        productId: '003'
+      }
+    }
+
+    computed = {
+    }
+
+    methods = {
+      otherEvent: function() {
+        aplusSDK.sendEvent('test_other_ekv', this.detail, 'OTHER');
+      }
+    }
+
+    onLoad() {
+    }
+  }
+</script>

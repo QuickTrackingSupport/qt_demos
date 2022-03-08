@@ -1,0 +1,20 @@
+.demo-click {
+    padding: 30px 5%;
+}
+.click-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 30px 0 50px;
+}
+.click-detail image {
+    width: 50%;
+    height: 180px;
+}
+.click-detail .detail-content {
+    font-size: 18px;
+    line-height: 30px;
+}
+.click-purchase {
+    width: 80%;
+}

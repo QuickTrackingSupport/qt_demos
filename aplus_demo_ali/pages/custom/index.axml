@@ -1,0 +1,16 @@
+<view class='page-container-classname'>
+                <view class='demo-click' onChildRef='saveChildRef0'>
+  <view class='click-detail'>
+    <image src='https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg'>
+    </image>
+    <view class='detail-content'>
+      <view a:for='{{detail}}' a:for-item='item' a:key='{{index}}' ref-numbers='{{detail}}'>
+        {{item.name}}: {{item.value}}
+      </view>
+    </view>
+  </view>
+  <button class='click-purchase primary-style' type='primary' onTap='otherEvent'>
+    点击购买
+  </button>
+</view>
+            </view>

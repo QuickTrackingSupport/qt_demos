@@ -1,0 +1,35 @@
+<view class='page-container-classname'>
+                <view class='setting' onChildRef='saveChildRef0'>
+  <view class='setting-all'>
+    <view>
+      配置全局属性
+    </view>
+    <textarea auto-height=" " placeholder='支持js基本类型，globalpropery配置后会跟着每条日志上报，eg: {a, 1, b: 2} or [1, 2, 3, 4, 5] 不支持多层嵌套' value='{{JSON.stringify(gp)}}' onInput='onGlobalPropertiesChanged'>
+    </textarea>
+    <view class='setting-btn'>
+      <button class='btn-gp primary-style' type='primary' onTap='registerGP'>
+        覆盖gp
+      </button>
+    </view>
+  </view>
+  <view class='setting-user'>
+    <view class='user-title'>
+      配置用户属性
+    </view>
+    <view class='user-account'>
+      <text>
+        注意： 设置用户属性前，一定要上传用户账号      </text>      <textarea auto-height=" " placeholder='上传用户账号代码' value='{{puid}}' onInput='onUserIdChanged'>
+      </textarea>
+    </view>    <button class='btn-user primary-style' type='primary' onTap='setUserId'>
+      设置用户账号
+    </button>
+    <view class='user-event'>
+      <text>
+        用户属性跟随$$_user_profile自定义事件上报      </text>      <textarea auto-height=" " placeholder='请填写用户属性，支持js object对象，仅支持一级kv结构' onInput='onUserPropertiesChanged'>
+      </textarea>
+    </view>    <button class='btn-user primary-style' type='primary' onTap='setUserProfile'>
+      设置用户属性
+    </button>
+  </view>
+</view>
+            </view>

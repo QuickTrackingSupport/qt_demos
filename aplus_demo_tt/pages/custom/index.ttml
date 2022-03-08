@@ -1,0 +1,8 @@
+<!--index.ttml-->
+<view class="demo-click">
+  <view class="click-detail">
+    <image src="https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg" />
+    <view class="detail-content"><view tt:for="{{detail}}" tt:for-item="item" tt:key="index">{{item.name}}: {{item.value}}</view></view>
+  </view>
+  <button class="click-purchase" type="primary" bindtap="otherEvent">点击购买</button>
+</view>

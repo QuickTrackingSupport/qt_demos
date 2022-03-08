@@ -1,0 +1,156 @@
+<template>
+  <div class="chameleon">
+    <view class="chameleon-view">
+      <section class="cml-left">SDK引入&_anony_id引入</section>
+      <section class="cml-right">
+        <p class="cml-tip">非常重要,<br/>直接影响数据是否发送</p>
+        <button type="primary" class="cml-viewcode" @tap="navigateToCode">点击查看集成代码</button>
+        
+      </section>
+    </view>
+    <view class="chameleon-view">
+      <section class="cml-left">根据埋点方案进行事件埋点</section>
+      <section class="cml-right">
+        <button type="primary" c-bind:tap="navigateToPv">页面浏览事件</button>
+        <button type="primary" c-bind:tap="navigateToClick">点击事件</button>
+        <button type="primary" c-bind:tap="navigateToExposure">曝光事件</button>
+        <button type="primary" c-bind:tap="navigateToCustom">自定义事件</button>
+      </section>
+    </view>
+    <view class="chameleon-view">
+      <section class="cml-left">按需设置全局/用户属性</section>
+      <section class="cml-right">
+        <button type="primary" class="cml-setting" @tap="navigateToSetting">设置全局/用户属性</button>
+      </section>
+    </view>
+  </div>
+</template>
+
+<script>
+
+import cml from 'chameleon-api';
+
+class Index  {
+  onLoad = function  onLoad(params) {
+  }
+  methods = {
+    navigateToCode() {
+      cml.navigateTo({
+        path: '/pages/integrate/integrate'
+      })
+    },
+    navigateToPv() {
+      cml.navigateTo({
+        path: '/pages/pv/pv'
+      })
+    },
+    navigateToClick() {
+      cml.navigateTo({
+        path: '/pages/click/click'
+      })
+    },
+    navigateToCustom() {
+      cml.navigateTo({
+        path: '/pages/custom/custom'
+      })
+    },
+    navigateToExposure() {
+      cml.navigateTo({
+        path: '/pages/exposure/exposure'
+      })
+    },
+    navigateToSetting() {
+      cml.navigateTo({
+        path: '/pages/setting/setting'
+      })
+    }
+  }
+}
+
+export default new Index();
+
+// export default {
+// 	onLoad(options) {
+
+// 	},
+//   methods: {
+//     navigateToCode() {
+//       cml.navigateTo({
+//         path: '/pages/integrate/integrate'
+//       })
+//     },
+//     navigateToPv() {
+//       cml.navigateTo({
+//         path: '/pages/pv/pv'
+//       })
+//     },
+//     navigateToClick() {
+//       cml.navigateTo({
+//         path: '/pages/click/click'
+//       })
+//     },
+//     navigateToCustom() {
+//       cml.navigateTo({
+//         path: '/pages/custom/custom'
+//       })
+//     },
+//     navigateToExposure() {
+//       cml.navigateTo({
+//         path: '/pages/exposure/exposure'
+//       })
+//     },
+//     navigateToSetting() {
+//       cml.navigateTo({
+//         path: '/pages/setting/setting'
+//       })
+//     }
+//   }
+// }
+</script>
+
+<style>
+  .chameleon {
+    min-height: 100vh;
+    background-color: rgb(235, 237, 243);
+    overflow: hidden;
+  }
+  .chameleon .chameleon-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 3% 0;
+    padding: 2%;
+    background-color: #fff;
+    -webkit-box-shadow: #ccc 0px 0px 10px; 
+    -moz-box-shadow: #ccc 0px 0px 10px;
+    font-size: 16px;
+  }
+
+  .chameleon .chameleon-view .cml-left{
+      width: 40%;
+      text-align: center;
+      border: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+    }
+  .cml-left button {
+        line-height: 30px;
+        padding: 0;
+      }
+  .chameleon .chameleon-view .cml-right{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .cml-right button {
+        width: 100%;
+        line-height: 37px;
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      .cml-right .cml-tip {
+        width: 88%;
+      }
+
+</style>

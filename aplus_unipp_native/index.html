@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<title>
+			<%= htmlWebpackPlugin.options.title %>
+		</title>
+		<!--preload-links-->
+		<!--app-context-->
+		<script>
+			(function(w, d, s, q, i) {
+				w[q] = w[q] || [];
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s);
+				j.async = true;
+				j.id = 'beacon-aplus';
+				j.src = 'https://d.alicdn.com/alilog/mlog/aplus/' + i + '.js';
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'aplus_queue', '203520406');
+
+			//集成应用的appKey
+			aplus_queue.push({
+				action: 'aplus.setMetaInfo',
+				arguments: ['appKey', 'aTestAppkey']
+			})
+			//如果是私有云部署还需要在上面那段JS后面紧接着添加日志域名埋点
+			//通常私有云日志服务端域名类似于：quickaplus-web-api.xxx.com.cn, 具体域名要找交付同学要
+			aplus_queue.push({
+				action: 'aplus.setMetaInfo',
+				arguments: ['aplus-rhost-v', 'log-api.aplus.emas-poc.com']
+				// arguments: ['aplus-rhost-v', 'log-api-daily.aplus.emas-poc.com'],
+			});
+			//开启调试模式
+			aplus_queue.push({
+				action: 'aplus.setMetaInfo',
+				arguments: ['DEBUG', true]
+			});
+			// 设置aplus-waiting = MAN, 关闭自动pv上报
+			aplus_queue.push({
+				action: 'aplus.setMetaInfo',
+				arguments: ['aplus-waiting', 'MAN']
+			});
+
+			aplus_queue.push({
+				action: 'aplus.setMetaInfo',
+				arguments: ['aplus-auto-exp', [{
+					'cssSelector': '.banner_item',
+					'logkey': 'test_auto_exp_banner',
+					'props': ['data-index'],
+				}, {
+					'cssSelector': '.exposure-grid-item',
+					'logkey': 'test_auto_exp_grid',
+					'props': ['data-index', 'data-name'],
+				}], ]
+			})
+
+			aplus_queue.push({
+				action: 'aplus.setMetaInfo',
+				arguments: ['aplus-auto-clk', [{
+					'cssSelector': '.auto_clk',
+					'logkey': 'test_auto_clk',
+					'props': ['data-product', 'data-productColor', 'data-productId'],
+				}]]
+			})
+
+			aplus_queue.push({
+				action: 'aplus.setMetaInfo',
+				arguments: ['_user_id', 'testid']
+			});
+		</script>
+		<link rel="stylesheet" href="<%= BASE_URL %>static/index.<%= VUE_APP_INDEX_CSS_HASH %>.css" />
+	</head>
+	<body>
+		<div id="app">
+			<!--app-html-->
+		</div>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>

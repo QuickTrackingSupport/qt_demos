@@ -1,0 +1,116 @@
+<template>
+  <app router-config="{{routerConfig}}"></app>
+</template>
+
+<script>
+  import routerConfig from '../router.config.json';
+
+  const aplusConfig = {
+    metaInfo: {
+      '_anony_id': 'test_id_111',
+      'appId': 'wx9e13f4e9923236ab', //和project.config.json里的appid保持一致，必填
+      // 'aplus-waiting':'MAN', //关闭自动PV,
+      'DEBUG': true,  // 埋点调试使用
+      'aplus-rhost-v': 'log-api.aplus.emas-poc.com', //pv日志发送去向，填域名，必填
+
+      // 全局属性
+      'globalproperty': {
+        a: 1,
+        b: 2
+      },
+
+      //自动曝光
+      'aplus-auto-exp': [{
+        'cssSelector': 'banner-item', //sdk会自动处理为： .banner-item
+        'logkey': '/ShowBannerItem',
+        'props': ['data-keyword'], //Taro不支持传值到小程序的dataset，可使用下述方法
+      }, {
+        'cssSelector': 'ListItem', //sdk会自动处理为： .ListItem
+        'logkey': '/ShowListItem',
+        'props': ['data-keyword'], //Taro不支持传值到小程序的dataset，可使用下述方法
+      }, {
+        'cssSelector': 'LongListItem', //sdk会自动处理为： .ListItem
+        'logkey': '/ShowLongListItem',
+        'props': ['data-keyword'],
+      }],
+
+      // 自动点击
+      // chameleon的点击事件event.changedTouches内的clientX、clientY不准确，导致aplus判断点击点位不在点击元素上，导致自动点击无法发出
+      'aplus-auto-clk': [{
+        'cssSelector': '.auto-click',
+        'logkey': '/AutoClick',
+        'props': ['data-keyword'],
+      }],
+
+      // 设置每个页面的page_name
+      'pageConfig': {
+        'pages/index/index': {
+          'pageName': 'page_name_test_index'
+        },
+        'pages/detail/detail': {
+          'pageName': 'page_name_test_detail'
+        },
+      }
+
+    }
+  }
+
+  const aplus = require('../utils/aplus_mini_cloud_um')(aplusConfig)
+
+  class App {
+    data = {
+      routerConfig
+    }
+    aplus = aplus
+    created(res) {
+    }
+  }
+
+  export default new App();
+</script>
+
+<style>
+
+</style>
+
+<script cml-type="json">
+{
+  "wx": {
+    "window": {
+      "backgroundTextStyle":"light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "Chameleon",
+      "navigationBarTextStyle":"black"
+    }
+  },
+  "baidu": {
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTitleText": "Chameleon",
+      "navigationBarTextStyle": "black"
+    }
+  },
+  "alipay": {
+      "window": {
+        "defaultTitle": "Chameleon"
+      }
+  },
+  "qq": {
+    "window": {
+      "backgroundTextStyle":"light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "Chameleon",
+      "navigationBarTextStyle":"black"
+    }
+  },
+  "tt": {
+    "window": {
+      "backgroundTextStyle":"light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "Chameleon",
+      "navigationBarTextStyle":"black"
+    }
+  }
+}
+</script>

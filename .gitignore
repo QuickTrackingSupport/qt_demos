@@ -1,0 +1,46 @@
+node_modules
+#ignore the file create by um-webpack
+/debug/*
+/report/*
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.log
+.vscode/*
+yarn.lock
+.history/*
+node_modules
+aplus_*/.history
+aplus_*/node_modules
+aplus_*/dist
+aplus_*/.hbuilderx
+aplus_*/.DS_Store
+aplus_*/src/uni_modules
+aplus_*/package-lock.json
+aplus_*/*.lock
+/aplus_uniapp_app/*.lock
+aplus_uniapp_native/*.lock
+aplus_rax/.rax
+aplus_rax/build
+aplus_rax/node_modules
+aplus_rax/package-lock.json
+/aplus_octopus/.octopus/**
+aplus_demo_wx/miniprogram_npm/**
+

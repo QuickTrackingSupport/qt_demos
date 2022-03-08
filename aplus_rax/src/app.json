@@ -1,0 +1,71 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "source": "pages/home/index",
+      "window": {
+        "title": "sdk集成流程说明",
+        "titleBarColor": "#13203C"
+      }
+    },
+    {
+      "path": "/integrate",
+      "source": "pages/integrate/integrate",
+      "window": {
+        "title": "sdk集成",
+        "titleBarColor": "#13203C"
+      }
+    },
+    {
+      "path": "/pv",
+      "source": "pages/pv/pv",
+      "window": {
+        "title": "页面一",
+        "titleBarColor": "#13203C"
+      }
+    },
+    {
+      "path": "/click",
+      "source": "pages/click/click",
+      "window": {
+        "title": "点击事件",
+        "titleBarColor": "#13203C"
+      }
+    },
+    {
+      "path": "/custom",
+      "source": "pages/custom/custom",
+      "window": {
+        "title": "自定义事件",
+        "titleBarColor": "#13203C"
+      }
+    },
+    {
+      "path": "/exposure",
+      "source": "pages/exposure/exposure",
+      "window": {
+        "title": "高级应用场景",
+        "titleBarColor": "#13203C"
+      }
+    },
+    {
+      "path": "/setting",
+      "source": "pages/setting/index",
+      "window": {
+        "title": "设置全局/用户属性",
+        "titleBarColor": "#13203C"
+      }
+    },
+    {
+      "path": "/vt",
+      "source": "pages/vt/vtdemo1",
+      "window": {
+        "title": "可视化demo",
+        "titleBarColor": "#13203C"
+      }
+    }
+  ],
+  "window": {
+    "title": "Rax App"
+  }
+}

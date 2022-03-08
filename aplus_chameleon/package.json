@@ -1,0 +1,16 @@
+{
+  "name": "aplus_chameleon",
+  "version": "1.0.0",
+  "description": "A chameleon project",
+  "author": "",
+  "private": true,
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+    "chameleon-api": "1.0.0",
+    "chameleon-runtime": "1.0.1",
+    "chameleon-store": "1.0.1",
+    "chameleon-ui-builtin": "1.0.6",
+    "cml-ui": "1.0.3"
+  }
+}

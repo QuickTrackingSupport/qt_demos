@@ -1,0 +1,85 @@
+<style lang="less">
+.event-pv {
+    padding: 30px 3%;
+}
+.pv-title {
+    font-size: 24px;
+    line-height: 48px;
+}
+.pv-tip  {
+    font-size: 16px;
+    line-height: 22px;
+    text {
+        margin: 10px 0;
+        display: block;
+    }
+}
+.pv-btn {
+    button {
+        width: 216px;
+        line-height: 35px;
+        margin: 45px 0 15px;
+    }
+    view {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+</style>
+
+<template>
+  <view class="event-pv">
+   <view class="pv-title">
+    页面浏览事件（PV）
+   </view>
+   <view class="pv-tip">
+    <text>1.默认为页面页面浏览事件自动采集，如需关闭自动，需配置aplus-waiting=“MAN”，手动控制发送pv</text>
+    <text>2.自动采集的页面浏览事件中，页面编码为path路径，日志发送时间为页面消失，点击“返回”按钮可以看到上报日志。</text>
+   </view>
+   <view class="pv-btn">
+    <button type="primary" @tap="sendPv">手动pv事件 页面编码"yemian_1"</button>
+    <view>手动采集的页面浏览事件中，页面编码为自定义值，使用page_name字段设置。</view>
+   </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import moduleA from 'module-a' // aliasFields ignore module example
+  import testMixin from '../../mixins/test'
+  import aplusSDK from '../../utils/umengAdaptor.js'
+
+  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
+
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '页面一'
+    }
+    components = {
+    }
+
+    mixins = [testMixin]
+
+    data = {
+      detail: [
+        {name: '商品名称', value: '杯具'},
+        {name: '颜色', value: '黄色'},
+        {name: '商品ID', value: '003'}
+      ]
+    }
+
+    computed = {
+    }
+
+    methods = {
+      sendPv: function() {
+          console.log('yz-----sendPV')
+          aplusSDK.sendPV({a: 1, b: 2, c: 3, page_name: 'manpv_page_custom'})
+      }
+    }
+
+    onLoad() {
+    }
+  }
+</script>

@@ -1,0 +1,168 @@
+<style lang="less">
+.uniapp {
+  min-height: 100vh;
+  background-color: rgb(235, 237, 243);
+  overflow: hidden;
+  .uniapp-view {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 3% 0;
+    padding: 2%;
+    background-color: #fff;
+    -webkit-box-shadow: #ccc 0px 0px 10px; 
+    -moz-box-shadow: #ccc 0px 0px 10px;
+    font-size: 16px;
+    .uni-left{
+      width: 40%;
+      text-align: center;
+      border: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+      button {
+        line-height: 30px;
+        padding: 0;
+      }
+    }
+    .uni-right{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      button {
+        width: 88%;
+        line-height: 37px;
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      .uni-tip {
+        width: 88%;
+      }
+    }
+    .uni-full {
+      width: 100%;
+      .uni-tracker-env {
+        margin: 4px 0;
+        border: 1px solid #d0d1d2;
+        width: 100%;
+        height: 30px;
+        box-sizing: border-box;
+        padding: 0 4px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+</style>
+<template>
+  <view class="uniapp">
+   <view class="uniapp-view">
+      <section class="uni-left">SDK引入&_anony_id引入</section>
+      <section class="uni-right">
+        <p class="uni-tip">非常重要,<br/>直接影响数据是否发送</p>
+        <button type="primary" class="uni-viewcode" @tap="navigateToCode">点击查看集成代码</button>
+      </section>
+    </view>
+    <view class="uniapp-view">
+      <section class="uni-left">根据埋点方案进行事件埋点</section>
+      <section class="uni-right">
+        <button type="primary" @tap="navigateToPv">页面浏览事件</button>
+        <button type="primary" @tap="navigateToClick">点击事件</button>
+        <button type="primary" @tap="navigateToExposure">曝光事件</button>
+        <button type="primary" @tap="navigateToCustom">自定义事件</button>
+        <button type="primary" @tap="navigateToVt">查看可视化demo</button>
+      </section>
+    </view>
+    <view class="uniapp-view">
+      <section class="uni-left">按需设置全局/用户属性</section>
+      <section class="uni-right">
+        <button type="primary" class="uni-setting" @tap="navigateToSetting">设置全局/用户属性</button>
+      </section>
+    </view>
+    <view class="uniapp-view">
+      <section class="uni-full">
+        收数域名：<input type="text" class="uni-tracker-env" id="tracker-domain" @value="aplusRhostV" @change="handlerDomainChange" />
+        appKey：<input type="text" class="uni-tracker-env" id="tracker-appkey" @value="appKey" @change="handlerAppKeyChange" />
+        可视化配置URL：<input type="text" class="uni-tracker-env" id="tracker-vt-url" @value="aplusVtCfgUrl" @change="handlerVtURLChange" />
+        QT系统域名：<input type="text" class="uni-tracker-env" id="tracker-sys-domain" @value="aplusApiHost" @change="handlerSysDomainChange" />
+        appInfoId：<input type="text" class="uni-tracker-env" id="tracker-appinfoid" @value="appInfoId" @change="handlerAppInfoIdChange" />
+        <button type="primary" class="uni-viewcode" @tap="navigateToSubmit">更新可视化配置</button>
+      </section>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import moduleA from 'module-a' // aliasFields ignore module example
+  import testMixin from '../../mixins/test'
+
+  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
+
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'SDK集成流程'
+    }
+    components = {
+    }
+
+    mixins = [testMixin]
+
+    data = {
+    }
+
+    computed = {
+    }
+
+    methods = {
+      handlerDomainChange(e) {
+        this.aplusRhostV = e.detail.value;
+      },
+      handlerSysDomainChange(e) {
+        this.aplusApiHost = e.detail.value;
+      },
+      handlerVtURLChange(e) {
+        this.aplusVtCfgUrl = e.detail.value;
+      },
+      handlerAppKeyChange(e) {
+        this.appKey = e.detail.value;
+      },
+      handlerAppInfoIdChange(e) {
+        this.appInfoId = e.detail.value;
+      },
+      navigateToSubmit() {
+        wepy.setStorageSync('__trackerInfo',{
+          aplusRhostV: this.aplusRhostV,
+          aplusApiHost: this.aplusApiHost,
+          aplusVtCfgUrl: this.aplusVtCfgUrl,
+          appKey: this.appKey,
+          appInfoId: this.appInfoId
+        });
+      },
+      navigateToCode() {
+        this.$navigate({url:"/pages/integrate/integrate"})
+      },
+      navigateToPv() {
+        this.$navigate({url:"/pages/pv/pv"})
+      },
+      navigateToClick() {
+        this.$navigate({url:"/pages/click/click"})
+      },
+      navigateToCustom() {
+        this.$navigate({url:"/pages/custom/custom"})
+      },
+      navigateToExposure() {
+        this.$navigate({url:"/pages/exposure/exposure"})
+      },
+      navigateToSetting() {
+        this.$navigate({url:"/pages/setting/setting"})
+      },
+      navigateToVt() {
+        this.$navigate({url:"/pages/vt/vtdemo1"})
+      }
+    }
+
+    onLoad() {
+    }
+  }
+</script>

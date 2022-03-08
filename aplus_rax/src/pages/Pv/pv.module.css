@@ -1,0 +1,28 @@
+.eventPv {
+    padding: 30px 3%;
+}
+.pvTTitle {
+    font-size: 24px;
+    line-height: 48px;
+}
+.pvTip {
+    font-size: 16px;
+    line-height: 22px;
+}
+.pvTip view {
+    margin: 10px 0;
+}
+.pvBtn button{
+    width: 216px;
+    line-height: 35px;
+    margin: 45px 0 15px;
+}
+.pvBtn view {
+    font-size: 16px;
+    line-height: 22px;
+}
+.manPv {
+    color: red;
+    line-height: 35px;
+    font-size: 24px;
+}

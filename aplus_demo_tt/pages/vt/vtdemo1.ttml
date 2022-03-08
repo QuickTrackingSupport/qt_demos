@@ -1,0 +1,76 @@
+<!--index.ttml-->
+<view class="event-exposure" capture-bind:tap="onAplusClk">
+  <view class="exposure-auto">
+    <view class="auto-title">场景1：轮播</view>
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular interval="{{interval}}" duration="{{duration}}">
+        <block tt:for="{{swiperImg}}" tt:key="*this" tt:for-item="item">
+          <swiper-item class="banner_item_vt" data-keyword="{{index}}" id="index">
+            <image src="{{item.url}}" alt />
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view class="exposure-manual">
+      <view class="manual-title">场景2：瀑布流</view>
+      <view tt:for="{{1}}" tt:key="value" class="exposure-grid ListItem" id="{{index}}">
+        <view tt:for="{{list1}}" tt:for-item="item" tt:key="index" class="exposure-grid-item-vt" data-track-params="{{JSON.stringify(item)}}">
+          <view class="grid-item-box">
+            <image src="{{item.url}}" alt />
+            <p>{{ item.name }}</p>
+            <p class="grid-item-detail">
+                <span>{{ item.price }}+{{index}}</span>
+                <span>{{ item.scale }}+{{index}}</span>
+            </p>
+          </view>
+        </view>
+      </view>
+      <view tt:for="{{1}}" tt:key="value" class="exposure-grid ListItem" id="{{index}}">
+        <view tt:for="{{list2}}" tt:for-item="item" tt:key="index" class="exposure-grid-item-vt" data-track-params="{{JSON.stringify(item)}}">
+          <view class="grid-item-box">
+            <image src="{{item.url}}" alt />
+            <p>{{ item.name }}</p>
+            <p class="grid-item-detail">
+                <span>{{ item.price }}+{{index}}</span>
+                <span>{{ item.scale }}+{{index}}</span>
+            </p>
+          </view>
+        </view>
+      </view>
+      <view tt:for="{{1}}" tt:key="value" class="exposure-grid ListItem" id="{{index}}">
+        <view tt:for="{{list3}}" tt:for-item="item" tt:key="index" class="exposure-grid-item-vt" data-track-params="{{JSON.stringify(item)}}">
+          <view class="grid-item-box">
+            <image src="{{item.url}}" alt />
+            <p>{{ item.name }}</p>
+            <p class="grid-item-detail">
+                <span>{{ item.price }}+{{index}}</span>
+                <span>{{ item.scale }}+{{index}}</span>
+            </p>
+          </view>
+        </view>
+      </view>
+      <view tt:for="{{1}}" tt:key="value" class="exposure-grid ListItem" id="{{index}}">
+        <view tt:for="{{list4}}" tt:for-item="item" tt:key="index" class="exposure-grid-item-vt" data-track-params="{{JSON.stringify(item)}}">
+          <view class="grid-item-box">
+            <image src="{{item.url}}" alt />
+            <p>{{ item.name }}</p>
+            <p class="grid-item-detail">
+                <span>{{ item.price }}+{{index}}</span>
+                <span>{{ item.scale }}+{{index}}</span>
+            </p>
+          </view>
+        </view>
+      </view>
+      <view tt:for="{{1}}" tt:key="value" class="exposure-grid ListItem" id="{{index}}">
+        <view tt:for="{{list5}}" tt:for-item="item" tt:key="index" class="exposure-grid-item-vt" data-track-params="{{JSON.stringify(item)}}">
+          <view class="grid-item-box">
+            <image src="{{item.url}}" alt />
+            <p>{{ item.name }}</p>
+            <p class="grid-item-detail">
+                <span>{{ item.price }}+{{index}}</span>
+                <span>{{ item.scale }}+{{index}}</span>
+            </p>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

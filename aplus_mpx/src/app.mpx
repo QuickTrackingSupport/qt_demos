@@ -1,0 +1,54 @@
+<script>
+/* eslint-disable */
+  import mpx, { createApp } from '@mpxjs/core'
+  import apiProxy from '@mpxjs/api-proxy'
+  import aplus from './utils/aplus';
+
+  mpx.use(apiProxy, { usePromise: true })
+  mpx.use(aplus);
+
+  createApp({
+    onLaunch (optoins) {
+      console.log('yz-----options', optoins);
+      const { aplus_queue } = aplus;
+      console.log('yz-----aplus', aplus.aplus.sendPV());
+
+    }
+  })
+</script>
+
+<style>
+  /*此处编写全局样式*/
+</style>
+
+<script type="application/json">
+  {
+    "pages": [
+      "./pages/index/index",
+      "./pages/integrate/integrate",
+      "./pages/pv/pv",
+      "./pages/click/click",
+      "./pages/custom/custom",
+      "./pages/setting/index",
+      "./pages/exposure/exposure",
+      "./pages/vt/vtdemo1.mpx"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#13203C",
+      "navigationBarTitleText": "SDK集成流程",
+      "navigationBarTextStyle": "white"
+    }
+  }
+</script>
+
+<!--也可以通过以下形式用js输出json，便于书写注释和使用条件编译-->
+
+<!--<script name="json">-->
+<!--  // 可以写注释，通过defs注入的常量做一些判断之类的操作-->
+<!--  module.exports = {-->
+<!--    pages: [-->
+<!--      './pages/index'-->
+<!--    ]-->
+<!--  }-->
+<!--</script>-->

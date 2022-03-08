@@ -1,0 +1,32 @@
+{
+  "name": "UmengAnalytics",
+  "id": "UmengAnalytics",
+  "version": "1.0.0",
+  "description": "示例插件",
+  "_dp_type": "nativeplugin",
+  "_dp_nativeplugin": {
+    "ios": {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "UmengAnalytics",
+          "class": "UniUMAnalyticsModule"
+        }
+      ],
+	  "hooksClass": "UniUMAnalyticsProxy",
+      "integrateType": "framework",
+      "deploymentTarget": "9.0"
+    },
+    "android": {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "UmengAnalytics",
+          "class": "com.umeng.uniapp.analytics.UniAnalyticsModule"
+        }
+      ],
+      "integrateType": "aar",
+      "minSdkVersion": 16
+    }
+  }
+}

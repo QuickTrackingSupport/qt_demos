@@ -1,0 +1,17 @@
+.sdkIntegrate {
+  padding: 30px 5%;
+}
+.sdkTitle {
+  font-size: 24px;
+  line-height: 48px;
+}
+.sdkCode {
+  margin: 10px 0 20px;
+}
+.sdkCode image {
+  width: 100%;
+}
+.sdkTips {
+  font-size: 16px;
+  line-height: 30px;
+}

@@ -1,0 +1,14 @@
+<view class='page-container-classname'>
+                <view class='sdk-integrate' onChildRef='saveChildRef0'>
+  <view class='sdk-title'>
+    SDK集成代码
+  </view>
+  <view class='sdk-code'>
+    <image src='https://img.alicdn.com/imgextra/i2/O1CN01lrPuDV26Gsg57P7tP_!!6000000007635-2-tps-1494-646.png'>
+    </image>
+  </view>
+  <view class='sdk-tips' a:for='{{tips}}' a:for-item='item' a:key='{{key}}' ref-numbers='{{tips}}'>
+    {{item.text}}
+  </view>
+</view>
+            </view>

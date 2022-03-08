@@ -1,0 +1,24 @@
+.event-pv {
+    padding: 30px 3%;
+}
+.pv-title {
+    font-size: 24px;
+    line-height: 48px;
+}
+.pv-tip  {
+    font-size: 16px;
+    line-height: 22px;
+}
+.pv-tip view {
+    margin: 10px 0;
+}
+.pv-btn .btn-auto {
+    width: 216px;
+    line-height: 35px;
+    margin: 45px 0 15px;
+    background-color: rgba(248, 89, 89, 1);
+}
+.pv-btn view {
+    font-size: 16px;
+    line-height: 22px;
+}

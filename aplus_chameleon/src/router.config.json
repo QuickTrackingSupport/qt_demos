@@ -1,0 +1,42 @@
+{
+  "mode": "history",
+  "domain": "https://www.chameleon.com",
+  "routes":[
+    {
+      "url": "/pages/index/index",
+      "path": "/pages/index/index",
+      "name": "SDK集成流程说明",
+      "mock": "index.php"
+    },
+    {
+      "url": "/pages/click/click",
+      "path": "/pages/click/click",
+      "name": "点击事件",
+      "mock": "index.php"
+    },
+    {
+      "url": "/pages/exposure/exposure",
+      "path": "/pages/exposure/exposure",
+      "name": "曝光事件",
+      "mock": "index.php"
+    },
+    {
+      "url": "/pages/integrate/integrate",
+      "path": "/pages/integrate/integrate",
+      "name": "SDK集成",
+      "mock": "index.php"
+    },
+    {
+      "url": "/pages/pv/pv",
+      "path": "/pages/pv/pv",
+      "name": "页面一",
+      "mock": "index.php"
+    },
+    {
+      "url": "/pages/custom/custom",
+      "path": "/pages/custom/custom",
+      "name": "自定义事件",
+      "mock": "index.php"
+    }
+  ]
+}

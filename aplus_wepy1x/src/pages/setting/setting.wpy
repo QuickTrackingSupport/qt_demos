@@ -1,0 +1,152 @@
+<style lang="less">
+.setting {
+    padding: 20px 3%;
+    .setting-all {
+        textarea{
+            width: 96%;
+            min-height: 60px;
+            padding: 18rpx 2%;
+            margin: 10px 0;
+            font-size: 28rpx;
+            background: #ccc;
+            color: #000
+        }
+        .setting-btn {
+            display: flex;
+            button {
+                width: 110px;
+                margin: 0 10px 30px 0;
+            }
+        }
+    }
+    .setting-user {
+        .setting-user-title {
+            line-height: 40px;
+        }
+        text {
+            font-size: 16px;
+            line-height: 32px;
+        }
+        textarea{
+            width: 96%;
+            min-height: 60px;
+            padding: 18rpx 2%;
+            margin: 10px 0;
+            font-size: 28rpx;
+            background: #ccc;
+            color: #000
+        }
+        button {
+            width: 173px;
+            margin: 0;
+        }
+    }
+    
+}
+</style>
+<template>
+  <view class="setting">
+    <view class="setting-all">
+        <view>配置全局属性</view>
+        <textarea 
+          auto-height 
+          placeholder="支持js基本类型，globalpropery配置后会跟着每条日志上报，eg: {a, 1, b: 2} or [1, 2, 3, 4, 5] 不支持多层嵌套"
+          @input="onGlobalPropertiesChanged"
+          @value="gp"
+        />
+        <view class="setting-btn">
+            <button type="primary" @tap="registerGP">覆盖gp</button>
+        </view>
+    </view>
+    <view class="setting-user">
+        <view class="setting-user-title">配置用户属性</view>
+        <view class="user-account">
+            <text>注意： 设置用户属性前，一定要上传用户账号</text>
+            <textarea auto-height placeholder="上传用户账号代码" @input="onUserIdChanged" @value="puid"/>
+        </view>
+        <button class="btn-user" type="primary" @tap="setUserId">设置用户账号</button>
+        <view class="user-event">
+            <text>用户属性跟随$$_user_profile自定义事件上报</text>
+            <textarea auto-height placeholder="$$_user_profile自定义事件代码" @input="onUserPropertiesChanged" @value="up"/>
+        </view>
+        <button type="primary" @tap="setUserProfile">设置用户属性前</button>
+    </view>
+</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import moduleA from 'module-a' // aliasFields ignore module example
+  import testMixin from '../../mixins/test'
+  import aplusSDK from '../../utils/umengAdaptor.js'
+
+  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
+
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '设置全局/用户属性'
+    }
+    components = {
+    }
+
+    mixins = [testMixin]
+
+    data = {
+      puid: 'testUserId',
+      up: {a: 1, b: 2},
+      gp: {'a': 1, 'b': 2, 'c': '3', from: 'wepy1x'}
+    }
+
+    computed = {
+    }
+
+    methods = {
+      onGlobalPropertiesChanged(e) {
+        try {
+          console.log('yz--------json', e.detail.value);
+          const keyMatcher = '([^",{}\\s]+?)';
+          const valMatcher = '(.,*)';
+          const matcher = new RegExp(`${keyMatcher}\\s*:\\s*${valMatcher}`, 'g');
+          const parser = (match, key, value) => `"${key}":${value}`
+          let gp = e.detail.value.replace(matcher, parser)
+          console.log('yz------json', JSON.parse(gp));
+          this.gp = JSON.parse(gp);
+        } catch (e) {}
+      },
+      registerGP() {
+        console.log('yz----', this.gp)
+        aplusSDK.registerGlobalProperties(this.gp);
+      },
+      onUserIdChanged(e) {
+        try {
+            this.puid = e.detail.value;
+            console.log('puid', this.puid);
+        } catch(e){
+        }
+      },
+      setUserId() {
+        console.log('当前userid:', this.puid);
+        aplusSDK.setUserId(this.puid);
+      },
+      onUserPropertiesChanged(e) {
+        try {
+            console.log('yz--------json', e.detail);
+            const keyMatcher = '([^",{}\\s]+?)';
+            const valMatcher = '(.,*)';
+            const matcher = new RegExp(`${keyMatcher}\\s*:\\s*${valMatcher}`, 'g');
+            const parser = (match, key, value) => `"${key}":${value}`
+            let up = e.detail.value.replace(matcher, parser)
+            console.log('yz------json', JSON.parse(up));
+            this.up = JSON.parse(up);
+        } catch (e) {}
+      },
+      setUserProfile() {
+          console.log('yz-----', JSON.stringify(this.up));
+          aplusSDK.sendEvent('$$_user_profile', this.up, 'OTHER')
+      },
+    }
+    onLoad() {
+    }
+  }
+</script>

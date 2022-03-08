@@ -1,0 +1,55 @@
+<template>
+    <div class="event-click">
+        <div class="click-detail">
+            <image src="https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg" alt=""></image>
+            <view><p c-for="{{detail}}" key="{{index}}">{{item.name}}: {{item.value}}</p></view>
+        </div>
+        <button class="click-purchase" type="default" c-bind:tap="onClick">点击购买</button>
+    </div>
+</template>
+
+<script>
+
+  import aplusApi from '../../utils/aplus_api'
+
+  class Custom {
+    data = {
+        detail: [
+            {name: '商品名称', value: '床头灯'},
+            {name: '颜色', value: '黄色'},
+            {name: '商品ID', value: '003'}
+        ]
+    }
+    methods = {
+      onClick() {
+        aplusApi.record('CustomEvent', 'CLK', {
+          CustomProps: 1111
+        })
+      }
+    }
+  }
+  export default new Custom()
+</script>
+
+<style>
+.event-click {
+    padding: 30px 5%;
+}
+.click-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 30px 0 50px;
+}
+.click-detail image {
+    width: 50%;
+    height: 180px;
+}
+.click-detail view {
+    font-size: 18px;
+    line-height: 30px;
+}
+.click-purchase {
+    width: 80%;
+}
+</style>

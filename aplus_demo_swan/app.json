@@ -1,0 +1,22 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/integrate/index",
+        "pages/pv/index",
+        "pages/click/index",
+        "pages/custom/index",
+        "pages/exposure/index",
+        "pages/setting/index",
+        "pages/vt/vtdemo1"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#13203C",
+        "navigationBarTitleText": "SDK集成流程",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2",
+    "lazyCodeLoading": "requiredComponents"
+}

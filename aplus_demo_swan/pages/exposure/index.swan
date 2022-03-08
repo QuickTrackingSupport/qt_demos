@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="event-exposure" capture-bind:touchstart="onAplusTouch">
+  <view class="exposure-auto">
+    <view class="auto-title">自动曝光 场景1: 轮播</view>
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular interval="{{interval}}" duration="{{duration}}">
+        <block s-for="item, index in swiperImg" s-key="*this">
+          <swiper-item class="banner-item" data-keyword="{{index}}" id="index">
+            <image src="{{item.url}}" alt />
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view class="exposure-manual">
+      <view class="manual-title">自动曝光 场景2: 瀑布流</view>
+      <view s-for="item, index in swiperList" s-key="value" class="exposure-grid ListItem" id="{{index}}">
+        <view s-for="item, index in list" s-key="index" class="exposure-grid-item">
+          <view class="grid-item-box">
+            <image src="{{item.url}}" alt />
+            <view>{{ item.name }}</view>
+            <view class="grid-item-detail">
+                <text>{{ item.price }}+{{index}}</text>
+                <text>{{ item.scale }}+{{index}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

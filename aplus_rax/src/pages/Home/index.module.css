@@ -1,0 +1,57 @@
+.uniapp {
+  min-height: 100vh;
+  background-color: rgb(235, 237, 243);
+  overflow: hidden;
+}
+.uniappView {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 3% 0;
+  padding: 2%;
+  background-color: #fff;
+  -webkit-box-shadow: #ccc 0px 0px 10px; 
+  -moz-box-shadow: #ccc 0px 0px 10px;
+  font-size: 16px;
+}
+.uniLeft{
+  width: 40%;
+  text-align: center;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+}
+.uniLeft view {
+  line-height: 30px;
+  padding: 0;
+}
+.uniRight{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.uniRight .uniTip {
+  width: 88%;
+}
+.uniRight .uniRightBtn {
+  width: 88%;
+  line-height: 37px;
+  margin: 5px 0;
+  font-size: 14px;
+  background-color: #1BBF60;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+}
+.uniFull {
+  width: 100%;
+}
+.unitrackerEnv {
+  margin: 4px 0;
+  border: 1px solid #d0d1d2;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 4px;
+  font-size: 14px;
+}

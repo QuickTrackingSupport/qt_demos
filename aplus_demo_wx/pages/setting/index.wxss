@@ -1,0 +1,39 @@
+.setting {
+    padding: 20px 3%;
+}
+.setting-all textarea{
+    width: 96%;
+    min-height: 60px;
+    padding: 18rpx 2%;
+    margin: 10px 0;
+    font-size: 28rpx;
+    background: #ccc;
+    color: #000
+}
+.setting-btn {
+    display: flex;
+}
+.setting-btn .btn-gp {
+    width: 110px;
+    margin: 0 10px 30px 0;
+}
+.setting-user .user-title {
+    line-height: 40px;
+}
+.setting-user text {
+    font-size: 16px;
+    line-height: 32px;
+}
+.setting-user textarea{
+    width: 96%;
+    min-height: 60px;
+    padding: 18rpx 2%;
+    margin: 10px 0;
+    font-size: 28rpx;
+    background: #ccc;
+    color: #000
+}
+.setting-user .btn-user {
+    width: 173px;
+    margin: 0;
+}

@@ -1,0 +1,66 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+		,{
+		    "path" : "pages/page1/page1",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "页面一",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+		,{
+		    "path" : "pages/page2/page2",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "页面二",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path": "pages/click/click",
+		    "style": {
+		        "navigationBarTitleText": "点击事件"
+		    }
+		},
+		{
+		    "path": "pages/setting/index",
+		    "style": {
+		      "navigationBarTitleText": "设置全局/用户属性"
+		    }
+		}
+		// #ifdef H5 | MP
+	    ,{
+            "path" : "pages/custom/custom",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "自定义事件",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/exposure/exposure",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "曝光事件",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+		// #endif
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

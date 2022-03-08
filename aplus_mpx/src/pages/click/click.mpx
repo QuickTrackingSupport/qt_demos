@@ -1,0 +1,65 @@
+
+<template>
+    <view class="event-click" capture-bind:tap="onAplusClk">
+        <view class="click-detail">
+            <image class="click-detail-img" src='https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg'/>
+             <view>
+                <view>商品名称：{{detail.product}}</view>
+                <view>商品颜色：{{detail.productColor}}</view>
+                <view>商品ID: {{detail.productId}}</view>
+            </view>
+        </view>
+        <view class="click-purchase">
+            <button type="primary" class="auto_clk click-purchase-btn" data-product="{{detail.product}}" data-productColor="{{detail.productColor}}" data-productId="{{detail.productId}}">点击购买(自动)</button>
+            <button type="primary" class="click-purchase-btn" bindtap="clickEvent">点击购买(手动)</button>
+        </view>
+    </view>
+</template>
+
+<script>
+  /* eslint-disable */
+  import { createPage } from '@mpxjs/core'
+  import AplusSDK from '../../utils/aplusAdapter';
+  createPage({
+    data: {
+      detail: {
+        product: '水杯',
+        productColor: '黄色',
+        productId: '003'
+      }
+    },
+    methods: {
+      onAplusClk: function (e) {
+        AplusSDK.onAplusClk(e)
+      },
+      clickEvent: function() {
+        console.log('yz-----abc');
+
+        AplusSDK.sendEvent('test_clk', this.detail);
+      }
+    }
+  })
+</script>
+
+<style lang="stylus" scoped>
+.event-click
+    padding: 30px 5%
+    .click-detail
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        margin: 30px 0 50px
+        .click-detail-img
+            width: 50%
+            height: 180px
+        .detail-content
+            font-size: 18px
+            line-height: 30px
+    .click-purchase
+        display: flex
+        justify-content: space-between
+        .click-purchase-btn
+            width: 48%
+            margin: 0
+            font-size: 16px
+</style>

@@ -1,0 +1,57 @@
+<template>
+    <view class="event-click">
+        <view class="click-detail">
+            <image class="click-detail-img" src='https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg'/>
+            <view>
+              <view>商品名称：{{detail.product}}</view>
+              <view>商品颜色：{{detail.productColor}}</view>
+              <view>商品ID: {{detail.productId}}</view>
+            </view>
+        </view>
+        <view class="click-purchase">
+          <button class="click-purchase-btn" type="primary" bindtap="otherEvent">点击购买</button>
+        </view>
+    </view>
+</template>
+
+<script>
+  import { createPage } from '@mpxjs/core';
+  import AplusSDK from '../../utils/aplusAdapter';
+  createPage({
+    data: {
+      detail: {
+        product: '水杯',
+        productColor: '黄色',
+        productId: '003'
+      }
+    },
+    methods: {
+      otherEvent: function() {
+        AplusSDK.sendEvent('test_other_ekv', this.detail, 'OTHER');
+      }
+    }
+  })
+</script>
+
+<style lang="stylus" scoped>
+.event-click
+    padding: 30px 5%
+    .click-detail
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        margin: 30px 0 50px
+        .click-detail-img
+            width: 50%
+            height: 180px
+        .detail-content
+            font-size: 18px
+            line-height: 30px
+    .click-purchase
+      width: 100%
+      display: flex
+      justify-content: center
+      .click-purchase-btn
+        width: 80%
+</style>
+

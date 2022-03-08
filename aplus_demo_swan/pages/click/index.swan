@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="demo-click" capture-bind:tap="onAplusClk">
+  <view class="click-detail">
+    <image src="https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg" />
+    <view class="detail-content">
+      <view>
+        <p>商品名称: {{detail.product}}</p>
+				<p>商品颜色: {{detail.productColor}}</p>
+				<p>商品ID: {{detail.productId}}</p>
+       </view>
+    </view>
+  </view>
+  <view class="click-purchase">
+    <button class="auto-click purchase-btn" type="primary" data-keyword="{{detail}}">点击购买(自动)</button>
+    <button class="purchase-btn" type="primary" bindtap="clickEvent">点击购买(手动)</button>
+  </view>
+</view>

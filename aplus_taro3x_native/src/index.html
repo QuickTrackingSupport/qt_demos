@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="format-detection" content="telephone=no,address=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+  <title></title>
+  <script>
+    !function(n){function e(){var e=n.document.documentElement,t=e.getBoundingClientRect().width;e.style.fontSize=t>=640?"40px":t<=320?"20px":t/320*20+"px"}n.addEventListener("resize",(function(){e()})),e()}(window);
+  </script>
+  <script>
+    function getRandom(min, max) {
+      return min + Math.floor(Math.random() * (max - min + 1));
+    };
+    const random = getRandom(1, 1000);
+    (function(w, d, s, q, i) {
+      w[q] = w[q] || [];
+      var f = d.getElementsByTagName(s)[0],j = d.createElement(s);
+      j.async = true;
+      j.id = 'beacon-aplus';
+      j.src = 'https://d.alicdn.com/alilog/mlog/aplus/' + i + '.js';
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'aplus_queue', 203607293);
+
+    //集成应用的appKey
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['appKey', 'skuu0fdm4ksl236ladytzi1o']
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['appInfoId', '92522112133683']
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['aplus-rhost-v', 'log-api.aplus.emas-poc.com']
+    });
+    // 可视化配置
+    // aplus_queue.push({
+    //   action: 'aplus.setMetaInfo',
+    //   arguments: ['aplus-vt-cfg-url', 'https://alidt.alicdn.com/alilog/vt/miniapp/skuu0fdm4ksl236ladytzi1o.json']
+    // });
+    // aplus_queue.push({
+    //   action: 'aplus.setMetaInfo',
+    //   arguments: ['aplus-api-host', 'pre.aplus.emas-poc.com']
+    // });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['_anony_id', "testOpenId_" + random]
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['_user_id', "testUserId_" + random]
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['DEBUG', true]
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['globalproperty', {from: 'taro_h5'}]
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['aplus-auto-exp', [
+        {
+          cssSelector: ".banner-item", //sdk会自动处理为： .banner-item
+          logkey: "test_auto_exp_banner",
+          props: ['data-index'], //Taro不支持传值到小程序的dataset，可使用下述方法
+        },
+        {
+          cssSelector: ".ListItem", //sdk会自动处理为： .ListItem
+          logkey: "ShowListItem",
+          props: ["data-keyword"], //Taro不支持传值到小程序的dataset，可使用下述方法
+        },
+        {
+          cssSelector: ".LongListItem", //sdk会自动处理为： .ListItem
+          logkey: "test_auto_exp_grid",
+          props: ['data-index', 'data-name'],
+        },
+      ]]
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['aplus-auto-clk', [
+        {
+          cssSelector: ".auto-click",
+          logkey: "test_auto_clk",
+          props: ['data-product', 'data-productColor', 'data-productId'],
+        },
+      ]]
+    });
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['pageConfig', {
+        'pages/index/index': {
+          'pageName': 'home_page'
+        },
+        'pages/vt/vtdemo1': {
+          'pageName': 'vtdemo_page'
+        },
+        'pages/click/click': {
+          'pageName': 'clickevent_page'
+        },
+        'pages/pv/pv': {
+          'pageName': 'manpv_page'
+        },
+        'pages/setting/index': {
+          'pageName': 'setting_page'
+        },
+        'pages/exposure/swiper': {
+          'pageName': 'exp_page'
+        },
+        'pages/exposure/virtualList': {
+          'pageName': 'exp_virtual_list_page'
+        },
+        'pages/exposure/longList': {
+          'pageName': 'exp_long_list_page'
+        },
+        'pages/custom/custom': {
+          'pageName': 'customevent_page'
+        },
+        'pages/integrate/integrate': {
+          'pageName': 'integrate_page'
+        },
+        // 'pages/car/shop': {
+        //   'pageName': 'carshop_page'
+        // }
+      }]
+    });
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>

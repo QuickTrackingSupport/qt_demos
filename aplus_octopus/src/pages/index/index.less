@@ -1,0 +1,38 @@
+.index {
+  .taro-view {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    // font-size: 16px;
+    .taro-left{
+      width: 40% !important;
+      text-align: center;
+      border: 1px dashed #ccc;
+      display: flex;
+      align-items: center;
+      button {
+        line-height: 30px;
+        padding: 0;
+      }
+    }
+    .taro-right{
+      width: 60% !important;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .button {
+        width: 100% !important;
+        // line-height: 37px;
+        margin: 5px 0;
+        // padding: 10px 0;
+        font-size: 14px;
+        .button-children {
+          width: 100%;
+        }
+      }
+      .taro-tip {
+        width: 88% !important;
+      }
+    }
+  }
+}

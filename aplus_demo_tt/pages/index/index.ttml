@@ -1,0 +1,36 @@
+<!--index.ttml-->
+<view class="aplus_demo">
+  <view class="demo-view">
+    <view class="view-left">SDK引入&_anony_id引入</view>
+    <view class="view-right">
+      <p class="right-tip">非常重要,<br />直接影响数据是否发送</p>
+        <button type="default" class="right-viewcode" bindtap="navigateToCode">点击查看集成代码</button>
+    </view>
+  </view>
+  <view class="demo-view">
+    <view class="view-left">根据埋点方案进行事件埋点</view>
+    <view class="view-right">
+      <button class="right-viewcode" type="primary" bindtap="navigateToPv">页面浏览事件</button>
+      <button class="right-viewcode" type="primary" bindtap="navigateToClick">点击事件</button>
+      <button class="right-viewcode" type="primary" bindtap="navigateToExposure">曝光事件</button>
+      <button class="right-viewcode" type="primary" bindtap="navigateToCustom">自定义事件</button>
+      <button class="right-viewcode" type="primary" bindtap="navigateToVT">去看可视化demo</button>
+    </view>
+  </view>
+  <view class="demo-view">
+    <view class="view-left">按需设置全局/用户属性</view>
+    <view class="view-right">
+      <button type="primary" class="right-viewcode" bindtap="navigateToSetting">设置全局/用户属性</button>
+    </view>
+  </view>
+  <view class="demo-view">
+    <view class="demo-full">
+      收数域名：<input type="text" class="uni-tracker-env" id="tracker-domain" value="{{aplusRhostV}}" bindchange="handlerDomainChange" />
+      appKey：<input type="text" class="uni-tracker-env" id="tracker-appkey" value="{{appKey}}" bindchange="handlerAppKeyChange" />
+      可视化配置URL：<input type="text" class="uni-tracker-env" id="tracker-vt-url" value="{{aplusVtCfgUrl}}" bindchange="handlerVtURLChange" />
+      QT系统域名：<input type="text" class="uni-tracker-env" id="tracker-sys-domain" value="{{aplusApiHost}}" bindchange="handlerSysDomainChange" />
+      appInfoId：<input type="text" class="uni-tracker-env" id="tracker-appinfoid" value="{{appInfoId}}" bindchange="handlerAppInfoIdChange" />
+      <button type="primary" class="uni-viewcode" bindtap="navigateToSubmit">更新可视化配置</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<!--index.ttml-->
+<view class="sdk-integrate">
+    <view class="sdk-title">SDK集成代码</view>
+    <view class="sdk-code">
+      <image src="https://img.alicdn.com/imgextra/i2/O1CN01lrPuDV26Gsg57P7tP_!!6000000007635-2-tps-1494-646.png"></image>
+    </view>
+    <view class="sdk-tips" tt:for="{{tips}}" tt:for-item="item" tt:key="key">{{item.text}}</view>
+</view>

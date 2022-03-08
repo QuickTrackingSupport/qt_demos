@@ -1,0 +1,26 @@
+.eventcClick {
+    padding: 30px 5%;
+}
+.clickDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 30px 0 50px;
+}
+.clickDetail image {
+    /* width: 50%; */
+    width: 180px;
+    height: 180px;
+}
+.clickDetail view {
+    font-size: 18px;
+    line-height: 30px;
+}
+.clickPurchase{
+    /* width: 60%; */
+    width: 200px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0 auto;
+}

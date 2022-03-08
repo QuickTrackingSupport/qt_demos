@@ -1,0 +1,48 @@
+{
+  "beginTime": "Thu Dec 23 2021 14:25:32 GMT+0800 (中国标准时间)",
+  "duration": "1360 ms",
+  "transformFileExtName": [
+    {
+      "type": "wxml -> ttml",
+      "message": "转换文件名后缀 wxml -> ttml，共计 8 个文件",
+      "files": [
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/vt/vtdemo1.ttml",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/click/index.ttml",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/exposure/index.ttml",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/index/index.ttml",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/integrate/index.ttml",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/pv/index.ttml",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/setting/index.ttml",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/custom/index.ttml"
+      ]
+    },
+    {
+      "type": "wxss -> ttss",
+      "message": "转换文件名后缀 wxss -> ttss，共计 9 个文件",
+      "files": [
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/app.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/vt/vtdemo1.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/custom/index.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/click/index.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/index/index.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/integrate/index.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/pv/index.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/setting/index.ttss",
+        "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/pages/exposure/index.ttss"
+      ]
+    }
+  ],
+  "needAttention": [
+    {
+      "type": "api is not supported",
+      "content": [
+        {
+          "file": "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/app.js",
+          "message": "api: cloud 暂未支持云开发模式，仅更换前缀，请参考开发者文档完成适配。转换 wx.cloud -> tt.cloud"
+        }
+      ]
+    }
+  ],
+  "transformError": [],
+  "transformLog": "/Users/guozhixia/Documents/aplus_sdk/aplus_demos/aplus_demo_tt/log.txt"
+}

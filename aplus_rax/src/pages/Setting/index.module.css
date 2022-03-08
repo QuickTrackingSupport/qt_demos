@@ -1,0 +1,46 @@
+.setting {
+    padding: 20px 3%;
+}
+.settingAll textarea,
+.settingGlobalText
+{
+    width: 96%;
+    min-height: 60px;
+    padding: 18rpx 2%;
+    margin: 10px 0;
+    font-size: 28rpx;
+    background: #ccc;
+    color: #000
+}
+.settingBtn,
+.settingBtnGp {
+    display: flex;
+}
+.settingBtn button {
+    width: 110px;
+    margin: 0 10px 30px 0;
+}
+.settingBtnGp button {
+    width: 130px;
+    margin: 0 10px 30px 0;
+}
+.settingUser view{
+    line-height: 40px;
+}
+.settingUser text {
+    font-size: 16px;
+    line-height: 32px;
+}
+.settingUser textarea{
+    width: 96%;
+    min-height: 60px;
+    padding: 18rpx 2%;
+    margin: 10px 0;
+    font-size: 28rpx;
+    background: #ccc;
+    color: #000
+}
+.settingUser button {
+    width: 173px;
+    margin: 0;
+}

@@ -1,0 +1,24 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/integrate/index",
+		"pages/pv/index",
+		"pages/click/index",
+		"pages/custom/index",
+		"pages/exposure/index",
+		"pages/setting/index",
+		"pages/vt/vtdemo1",
+		"pages/ant-move-runtime-logs/index",
+		"pages/ant-move-runtime-logs/specific/index"
+	],
+	"window": {
+		"backgroundColor": "#F6F6F6",
+		"backgroundTextStyle": "light",
+		"navigationBarTextStyle": "white",
+		"titleBarColor": "#13203C",
+		"defaultTitle": "SDK集成流程"
+	},
+	"sitemapLocation": "sitemap.json",
+	"style": "v2",
+	"lazyCodeLoading": "requiredComponents"
+}

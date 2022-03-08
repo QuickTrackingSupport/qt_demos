@@ -1,0 +1,15 @@
+{
+  "name": "aplus_demo_wx",
+  "version": "1.0.0",
+  "description": "这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：",
+  "main": "antmove.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "qt-miniprogram": "^1.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+framework module UMSpm {
+  umbrella header "UMSpm.h"
+
+  export *
+  module * { export * }
+}

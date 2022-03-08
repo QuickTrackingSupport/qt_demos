@@ -1,0 +1,66 @@
+<template>
+    <view class="event-click" c-catch:touchstart="onAplusClk">
+        <view class="click-detail">
+            <image src="https://gd1.alicdn.com/imgextra/i4/2207297515629/O1CN01W5rDzt1rS89qNHD1f_!!2207297515629.jpg_400x400.jpg"></image>
+            <view><p c-for="{{detail}}" key="index">{{item.name}}: {{item.value}}</p></view>
+        </view>
+        <view class="click-purchase">
+            <button type="default" class="auto-click" data-keyword="auto-click">点击购买(自动)</button>
+            <button type="default" c-bind:tap="navigateToClick">点击购买(手动)</button>
+        </view>
+    </view>
+</template>
+
+<script>
+import aplusApi from '../../utils/aplus_api.js';
+
+class Click {
+    data = {    
+        detail: [
+            {name: '商品名称', value: '床头灯'},
+            {name: '颜色', value: '黄色'},
+            {name: '商品ID', value: '003'}
+        ],
+        chameleonSrc: require('../../assets/images/chameleon.png')
+    }
+    methods = {
+        navigateToClick(params) {
+            aplusApi.record('/ClickToBuy', 'CLK', {
+              productName: '床头灯',
+              price: '100'
+            })
+        }
+    }
+}
+export default new Click();
+</script>
+
+<style>
+.event-click {
+    padding: 30px 5%;
+}
+.click-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 30px 0 50px;   
+}
+.click-detail image {
+    width: 50%;
+    height: 180px;
+}
+.click-detail view {
+    font-size: 18px;
+    line-height: 30px;
+}
+.click-purchase {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.click-purchase button {
+        width: 100%;
+        font-size: 16px;
+    }
+</style>

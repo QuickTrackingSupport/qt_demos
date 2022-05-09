@@ -2,7 +2,7 @@
   "routes": [
     {
       "path": "/",
-      "source": "pages/home/index",
+      "source": "pages/Home/index",
       "window": {
         "title": "sdk集成流程说明",
         "titleBarColor": "#13203C"
@@ -10,7 +10,7 @@
     },
     {
       "path": "/integrate",
-      "source": "pages/integrate/integrate",
+      "source": "pages/Integrate/integrate",
       "window": {
         "title": "sdk集成",
         "titleBarColor": "#13203C"
@@ -18,7 +18,7 @@
     },
     {
       "path": "/pv",
-      "source": "pages/pv/pv",
+      "source": "pages/Pv/pv",
       "window": {
         "title": "页面一",
         "titleBarColor": "#13203C"
@@ -26,7 +26,7 @@
     },
     {
       "path": "/click",
-      "source": "pages/click/click",
+      "source": "pages/Click/click",
       "window": {
         "title": "点击事件",
         "titleBarColor": "#13203C"
@@ -34,7 +34,7 @@
     },
     {
       "path": "/custom",
-      "source": "pages/custom/custom",
+      "source": "pages/Custom/custom",
       "window": {
         "title": "自定义事件",
         "titleBarColor": "#13203C"
@@ -42,7 +42,7 @@
     },
     {
       "path": "/exposure",
-      "source": "pages/exposure/exposure",
+      "source": "pages/Exposure/exposure",
       "window": {
         "title": "高级应用场景",
         "titleBarColor": "#13203C"
@@ -50,7 +50,7 @@
     },
     {
       "path": "/setting",
-      "source": "pages/setting/index",
+      "source": "pages/Setting/index",
       "window": {
         "title": "设置全局/用户属性",
         "titleBarColor": "#13203C"

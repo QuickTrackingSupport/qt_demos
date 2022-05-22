@@ -12,9 +12,9 @@ Page({
   sendPv() {
     console.log('yz-----sendPV');
     const { aplus } = getApp();
-    aplus.sendPV(
-      { is_auto: false},
-      {a: 1, b: 2, c: 3, page_name: 'manpv_page_custom', d: undefined, e: null, f: ''}
-    )
+    aplus.aplus_queue.push({
+      action: 'aplus.sendPV',
+      arguments: [{is_auto: false}, {a: 1, b: 2, c: 3, page_name: 'manpv_page_custom', d: undefined, e: null, f: ''}]
+    })
 }
 });

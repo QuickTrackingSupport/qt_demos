@@ -13,22 +13,18 @@ const random = getRandom(1, 1000);
 
 const aplusConfig = {
   metaInfo: {
-    // POC环境
-   'appKey': trackerInfo.appKey,
-   'appInfoId': trackerInfo.appInfoId,
-   'aplus-rhost-v': trackerInfo.aplusRhostV, 
-   'aplus-vt-cfg-url': trackerInfo.aplusVtCfgUrl, // 已发布的配置地址
-   'DEBUG': true,
-   '_anony_id': 'testOpenId_' + random, // 'testOpenId', //必填
-   '_user_id': 'testUserId_' + random,
-   '_user_nick': 'testUserNick',
+   'appKey': trackerInfo.appKey || 'test_appKey', //必填
+   'appInfoId': trackerInfo.appInfoId || 'anAppInfoId', 
+   'aplus-rhost-v': trackerInfo.aplusRhostV || 'log-api.aplus.emas-poc.com',  //必填 收数域名
+   'DEBUG': true, //调试模式 打印sdk日志
+   '_anony_id': 'testOpenId', //必填
+   '_user_id': 'testUserId',
     // 全局属性
     'globalproperty': {
       a: 1,
       b: 2,
       from: 'wx'
     },
-
     //自动曝光
     'aplus-auto-exp': [{
       'cssSelector': '.banner-item', //sdk会自动处理为： .banner-item
@@ -48,13 +44,15 @@ const aplusConfig = {
     }],
     'pageConfig': {
   		'pages/index/index': {
-  		  'pageName': 'home_page'
+        'pageName': 'home_page',
+        'pageTitle': '首页'
   		},
       'pages/vt/vtdemo1': {
-        'pageName': 'vtdemo_page'
+        'pageName': 'vtdemo_page',
+        
       },
   		'pages/click/index': {
-  		  'pageName': 'clickevent_page'
+  		  'pageName': 'clickevent_page',
   		},
   		'pages/pv/pv': {
   			'pageName': 'manpv_page'
@@ -77,28 +75,11 @@ const aplusConfig = {
     }
   }
 }
-const { AplusMini } = require('qt-miniprogram');
-// const aplus = require('./utils/aplus_mini_cloud_um')(aplusConfig)
-const aplus = AplusMini.create({
-  ...aplusConfig
-});
+const aplus = require('./utils/aplus_mini')(aplusConfig)
 
 App({
   aplus,
   onLaunch: function () {
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
-    } else {
-      // wx.cloud.init({
-      //   // env 参数说明：
-      //   //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
-      //   //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
-      //   //   如不填则使用默认环境（第一个创建的环境）
-      //   // env: 'my-env-id',
-      //   traceUser: true,
-      // });
-    }
-
     this.globalData = {};
   }
 });

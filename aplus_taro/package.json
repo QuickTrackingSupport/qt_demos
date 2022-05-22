@@ -40,7 +40,6 @@
     "@tarojs/react": "3.3.17",
     "@tarojs/runtime": "3.3.17",
     "@tarojs/taro": "3.3.17",
-    "qt-miniprogram": "^1.0.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "taro-ui": "^2.3.4"

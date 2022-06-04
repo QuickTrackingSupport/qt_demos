@@ -27,16 +27,19 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "enableEngineNative": false,
         "useIsolateContext": true,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
         "minifyWXSS": true,
-        "showES6CompileOption": false
+        "disableUseStrict": false,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false,
+        "ignoreUploadUnusedFiles": true,
+        "minifyWXML": true
     },
     "compileType": "miniprogram",
-    "appid": "wxb52ceeb7d2205fcd",
+    "appid": "wxb074234f5a88fdfa",
     "projectname": "aplus_wepy1x",
     "miniprogramRoot": "dist/",
     "condition": {}

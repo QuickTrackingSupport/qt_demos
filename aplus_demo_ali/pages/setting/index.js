@@ -28,20 +28,33 @@ _Page({
         console.log("yz----", JSON.stringify(this.data.gp)); // UmengSDK.registerGlobalProperties(this.gp);
 
         const { aplus } = getApp();
-        aplus.setMetaInfo("globalproperty", { ...this.data.gp });
+        aplus.aplus_queue.push({
+          action: 'aplus.setMetaInfo',
+          arguments: ['globalproperty', { ...this.data.gp }]
+        })
+        // aplus.setMetaInfo("globalproperty", { ...this.data.gp });
     },
 
     setUserProfile() {
         console.log("当前用户属性：", JSON.stringify(this.data.up));
         const { aplus } = getApp();
         console.log(aplus, "aplus");
-        aplus.record("$$_user_profile", "OTHER", { ...this.data.up });
+        // aplus.record("$$_user_profile", "OTHER", { ...this.data.up });
+        aplus.aplus_queue.push({
+          action: 'aplus.record',
+          arguments: ['$$_user_profile', "OTHER", { ...this.data.up }]
+        });
     },
 
     setUserId() {
         const { aplus } = getApp();
         console.log("当前userid:", this.data.puid);
-        aplus.setMetaInfo("_user_id", this.data.puid);
+        // aplus.setMetaInfo("_user_id", this.data.puid);
+
+        aplus.aplus_queue.push({
+          action: 'aplus.setMetaInfo',
+          arguments: ['_user_id', this.data.puid]
+        });
     },
 
     onGlobalPropertiesChanged(event) {

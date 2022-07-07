@@ -27,10 +27,18 @@ _Page({
 
     otherEvent() {
         const { aplus } = getApp();
-        aplus.record("test_other_ekv", "OTHER", {
+        aplus.aplus_queue.push({
+          action: 'aplus.record',
+          arguments: ["test_other_ekv", "OTHER", {
             a: 1,
             b: 2,
             c: 3
-        });
+          }]
+        })
+        // aplus.record("test_other_ekv", "OTHER", {
+        //     a: 1,
+        //     b: 2,
+        //     c: 3
+        // });
     }
 });

@@ -10,6 +10,9 @@ Page({
   },
   clickEvent() {		
       const { aplus }= getApp();
-      aplus.record('test_man_clk', 'CLK', this.data.detail)
+      aplus.aplus_queue.push({
+        action: 'aplus.record',
+        arguments: ['test_man_clk', 'CLK', this.data.detail]
+      });
   }
 });

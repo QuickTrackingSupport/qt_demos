@@ -36,14 +36,14 @@
     "disableUseStrict": false,
     "showES6CompileOption": false,
     "useCompilerPlugins": false,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "useStaticServer": true
   },
   "appid": "wx761c0bae532a2466",
   "projectname": "aplus_demo_qq",
   "libVersion": "2.20.1",
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
   "qqappid": "1112117592",
-  "scripts": {},
   "condition": {
     "search": {
       "list": []
@@ -66,5 +66,15 @@
         }
       ]
     }
-  }
+  },
+  "compileType": "miniprogram",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
 }

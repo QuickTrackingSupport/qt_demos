@@ -20,8 +20,7 @@ const aplusConfig = {
         // POC环境
         appKey: trackerInfo.appKey,
         appInfoId: trackerInfo.appInfoId,
-        "aplus-rhost-v":
-            trackerInfo.aplusRhostV,
+        "aplus-rhost-v": trackerInfo.aplusRhostV,
         "aplus-vt-cfg-url":
             trackerInfo.aplusVtCfgUrl,
         // 已发布的配置地址
@@ -79,9 +78,8 @@ const aplusConfig = {
     }
 };
 
-const { AplusMini } = require("qt-miniprogram"); // const aplus = require('./utils/aplus_mini_cloud_um')(aplusConfig)
 
-const aplus = AplusMini.create({ ...aplusConfig });
+const aplus = require('./utils/aplus_mini')(aplusConfig)
 
 App({
     aplus,

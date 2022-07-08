@@ -39,7 +39,7 @@
     "minifyWXML": true,
     "useStaticServer": true
   },
-  "appid": "wx761c0bae532a2466",
+  "appid": "wxf57e2a5a13d2dcbf",
   "projectname": "aplus_demo_qq",
   "libVersion": "2.20.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",

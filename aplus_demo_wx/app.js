@@ -17,7 +17,8 @@ const aplusConfig = {
    'appInfoId': trackerInfo.appInfoId || 'anAppInfoId', 
    'aplus-rhost-v': trackerInfo.aplusRhostV || 'log-api.aplus.emas-poc.com',  //必填 收数域名
    'DEBUG': true, //调试模式 打印sdk日志
-   '_anony_id': 'testOpenId', //必填
+  //  '_anony_id': 'testOpenId', //必填
+  //  "autoGetOpenid": true,
    '_user_id': 'testUserId',
     // 全局属性
     'globalproperty': {
@@ -43,23 +44,23 @@ const aplusConfig = {
       'props': ['data-keyword'],
     }],
     'pageConfig': {
-  		'pages/index/index': {
+      'pages/index/index': {
         'pageName': 'home_page',
         'pageTitle': '首页'
-  		},
+      },
       'pages/vt/vtdemo1': {
         'pageName': 'vtdemo_page',
         
       },
-  		'pages/click/index': {
-  		  'pageName': 'clickevent_page',
-  		},
-  		'pages/pv/pv': {
-  			'pageName': 'manpv_page'
-  		},
-  		'pages/setting/index': {
-  			'pageName': 'setting_page'
-  		},
+      'pages/click/index': {
+        'pageName': 'clickevent_page',
+      },
+      'pages/pv/pv': {
+        'pageName': 'manpv_page'
+      },
+      'pages/setting/index': {
+        'pageName': 'setting_page'
+      },
       'pages/exposure/index': {
         'pageName': 'exp_page'
       },

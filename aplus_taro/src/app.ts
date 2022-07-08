@@ -17,15 +17,13 @@ const random = getRandom(1, 1000);
 
 const aplusConfig = {
   metaInfo: {
-    "appKey": trackerInfo.appKey || "skuu0fdm4ksl236ladytzi1o",
+    "appKey": trackerInfo.appKey || "test_appkey",
     "appInfoId": trackerInfo.appInfoId || "92522112133683",
-    // "aplus-rhost-v": trackerInfo.aplusRhostV || "log-api.aplus.emas-poc.com", //日志发送去向，填域名，必填
-    'aplus-rhost-g': 'quickaplus-web-api-cn-zhangjiakou.aliyun.com',
-    'aplus-rhost-v': 'quickaplus-web-api-cn-zhangjiakou.aliyun.com',
-    // "aplus-vt-cfg-url":
-    //   trackerInfo.aplusVtCfgUrl ||
-    //   "https://alidt.alicdn.com/alilog/vt/miniapp/skuu0fdm4ksl236ladytzi1o.json", // 已发布的配置地址
-    // "aplus-api-host": trackerInfo.aplusApiHost || 'pre.aplus.emas-poc.com', // 采集管理系统域名，用于可视化埋点验证
+    'aplus-rhost-v': 'log-api.aplus.emas-poc.com',
+    "aplus-vt-cfg-url":
+      trackerInfo.aplusVtCfgUrl ||
+      "https://alidt.alicdn.com/alilog/vt/miniapp/skuu0fdm4ksl236ladytzi1o.json", // 已发布的配置地址
+    "aplus-api-host": trackerInfo.aplusApiHost || 'log-api.aplus.emas-poc.com', // 采集管理系统域名，用于可视化埋点验证
     "_anony_id": "testOpenId" + random,
     '_user_id': 'testUserId_' + random,
     // "appId": "wx9e13f4e9923236ab", //和project.config.json里的appid保持一致，必填
@@ -102,41 +100,41 @@ const aplusConfig = {
     // },
 
     // // 设置每个页面的page_name
-    // pageConfig: {
-    //   'pages/index/index': {
-  	// 	  'pageName': 'home_page'
-  	// 	},
-    //   'pages/vt/vtdemo1': {
-    //     'pageName': 'vtdemo1'
-    //   },
-  	// 	'pages/click/click': {
-  	// 	  'pageName': 'clickevent_page'
-  	// 	},
-  	// 	'pages/pv/pv': {
-  	// 		'pageName': 'manpv_page'
-  	// 	},
-  	// 	'pages/setting/index': {
-  	// 		'pageName': 'setting_page'
-  	// 	},
-    //   'pages/exposure/swiper': {
-    //     'pageName': 'exp_page'
-    //   },
-    //   'pages/exposure/virtualList': {
-    //     'pageName': 'exp_virtual_list_page'
-    //   },
-    //   'pages/exposure/longList': {
-    //     'pageName': 'exp_long_list_page'
-    //   },
-    //   'pages/custom/custom': {
-    //     'pageName': 'customevent_page'
-    //   },
-    //   'pages/integrate/integrate': {
-    //     'pageName': 'integrate_page'
-    //   },
+    pageConfig: {
+      'pages/index/index': {
+  		  'pageName': 'home_page'
+  		},
+      'pages/vt/vtdemo1': {
+        'pageName': 'vtdemo1'
+      },
+  		'pages/click/click': {
+  		  'pageName': 'clickevent_page'
+  		},
+  		'pages/pv/pv': {
+  			'pageName': 'manpv_page'
+  		},
+  		'pages/setting/index': {
+  			'pageName': 'setting_page'
+  		},
+      'pages/exposure/swiper': {
+        'pageName': 'exp_page'
+      },
+      'pages/exposure/virtualList': {
+        'pageName': 'exp_virtual_list_page'
+      },
+      'pages/exposure/longList': {
+        'pageName': 'exp_long_list_page'
+      },
+      'pages/custom/custom': {
+        'pageName': 'customevent_page'
+      },
+      'pages/integrate/integrate': {
+        'pageName': 'integrate_page'
+      },
     //   // 'pages/car/shop': {
     //   //   'pageName': 'carshop_page'
     //   // }
-    // },
+    },
   },
 };
 

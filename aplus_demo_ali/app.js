@@ -20,7 +20,8 @@ const aplusConfig = {
         // POC环境
         appKey: trackerInfo.appKey,
         appInfoId: trackerInfo.appInfoId,
-        "aplus-rhost-v": trackerInfo.aplusRhostV,
+        "aplus-rhost-v":
+            trackerInfo.aplusRhostV || 'log-api.aplus.emas-poc.com',
         "aplus-vt-cfg-url":
             trackerInfo.aplusVtCfgUrl,
         // 已发布的配置地址

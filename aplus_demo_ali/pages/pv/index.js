@@ -28,19 +28,17 @@ _Page({
     sendPv() {
         console.log("yz-----sendPV");
         const { aplus } = getApp();
-        aplus.sendPV(
-            {
-                is_auto: false
-            },
-            {
-                a: 1,
+        aplus.aplus_queue.push({
+          action: 'aplus.sendPV',
+          arguments: [{is_auto: false}, {
+            a: 1,
                 b: 2,
                 c: 3,
                 page_name: "page1_userdefined",
                 d: undefined,
                 e: null,
                 f: ""
-            }
-        );
+          }]
+        })
     }
 });

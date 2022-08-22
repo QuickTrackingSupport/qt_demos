@@ -1,0 +1,4 @@
+<view>
+  <text>Message: {{ message }}</text>
+  <hello-component></hello-component>
+</view>

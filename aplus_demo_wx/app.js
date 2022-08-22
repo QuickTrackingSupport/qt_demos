@@ -13,19 +13,19 @@ const random = getRandom(1, 1000);
 
 const aplusConfig = {
   metaInfo: {
-   'appKey': trackerInfo.appKey || 'test_appKey', //必填
+   'appKey': trackerInfo.appKey || 'n6pi006vgkq218njz5163gyh' || 'test_appKey', //必填
    'appInfoId': trackerInfo.appInfoId || 'anAppInfoId', 
-   'aplus-rhost-v': trackerInfo.aplusRhostV || 'log-api.aplus.emas-poc.com',  //必填 收数域名
+   'aplus-rhost-v': trackerInfo.aplusRhostV || 'aplus2-portal-lite.aplus.emas-poc.com' ||'log-api.aplus.emas-poc.com',  //必填 收数域名
    'DEBUG': true, //调试模式 打印sdk日志
-  //  '_anony_id': 'testOpenId', //必填
+   '_anony_id': 'testOpenId', //必填
   //  "autoGetOpenid": true,
    '_user_id': 'testUserId',
     // 全局属性
-    'globalproperty': {
-      a: 1,
-      b: 2,
-      from: 'wx'
-    },
+    // 'globalproperty': {
+    //   a: 1,
+    //   b: 2,
+    //   from: 'wx'
+    // },
     //自动曝光
     'aplus-auto-exp': [{
       'cssSelector': '.banner-item', //sdk会自动处理为： .banner-item
@@ -81,6 +81,10 @@ const aplus = require('./utils/aplus_mini')(aplusConfig)
 App({
   aplus,
   onLaunch: function () {
+    aplus.aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['globalproperty', {a: 1, b: 2, c: 2}]
+    });
     this.globalData = {};
   }
 });

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "hello-component": "../components/hello-compoenent"
+  }
+}

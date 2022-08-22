@@ -2,7 +2,7 @@
 const aplusConfig = {
   metaInfo: {
     'appKey': 'testAppKey',
-    'aplus-rhost-v': 'log-api.aplus.emas-poc.com',
+    'aplus-rhost-v': 'test_collect_domain.com',
     '_anony_id': 'test_open_id_test_yuzhao_openid1',
     '_user_id': 'user_id',
     'DEBUG': true,

@@ -55,7 +55,8 @@
         {
           "name": "",
           "pathName": "pages/index/index",
-          "query": "miniappDebugId=log_53772101248884_6e10f6c206334380b07d5f7ad3398e72_log20211222044644",
+          "query": "a=1&b=2&cccccccc=3",
+          "launchMode": "default",
           "scene": null
         }
       ]

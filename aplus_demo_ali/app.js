@@ -79,10 +79,8 @@ const aplusConfig = {
     }
 };
 
-// const { AplusMini } = require("qt-miniprogram"); // const aplus = require('./utils/aplus_mini_cloud_um')(aplusConfig)
 
-// const aplus = AplusMini.create({ ...aplusConfig });
-const aplus = require('./utils/aplus_mini')(aplusConfig);
+const aplus = require('./utils/aplus_mini')(aplusConfig)
 
 App({
     aplus,

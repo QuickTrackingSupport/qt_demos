@@ -1,0 +1,87 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="wrapper">
+    <text class="title">{{ text }}</text>
+    <!-- 点击跳转详情页 -->
+    <input
+      class="btn"
+      type="button"
+      value="跳转到首页"
+      onclick="navigateTo"
+    />
+    <input
+      class="btn"
+      type="button"
+      value="上报用户属性"
+      onclick="sendUserProfile"
+    />
+</template>
+
+<script>
+import router from '@system.router'
+
+export default {
+  private: {
+    text: '自定义测试页面',
+  },
+
+  onInit() {
+    console.log('router page === ', router.getState())
+    console.log('router ==== ', router.getPages())
+    console.log('router pages === ', router.back);
+    console.log('router pages === ', router);
+  },
+
+  navigateTo() {
+    router.push({
+        uri: '/pages/Demo',
+    })
+  },
+
+  sendUserProfile() {
+      qt.sendUserProfile({
+          a: 1,
+          b: 2
+      })
+  },
+
+  onShow() {
+    qt.sendPageStart({
+      page_name: 'test_page',
+      page_title: '页面title'
+    })
+  },
+
+  onHide() {
+    console.log('stacks ==== ', router.getPages());
+    console.log('page hide ==== ', router.getState());
+  },
+}
+</script>
+
+<style lang="less">
+@import './../../assets/styles/style.less';
+
+.wrapper {
+  .flex-box-mixins(column, center, center);
+  margin: 0 10 * @size-factor;
+  .title {
+    font-size: 8 * @size-factor;
+    text-align: center;
+    color: @black;
+  }
+  .desc {
+    margin-top: 10 * @size-factor;
+    color: @grey;
+  }
+  .btn {
+    width: 90 * @size-factor;
+    height: 16 * @size-factor;
+    border-radius: 8 * @size-factor;
+    background-color: @brand;
+    color: @white;
+    font-size: 30px;
+    margin-top: 16 * @size-factor;
+  }
+}
+</style>

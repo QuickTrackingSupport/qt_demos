@@ -1,0 +1,40 @@
+<script>
+/**
+ * 应用级别的配置，供所有页面公用
+ */
+import device from "@system.device";
+import app from '@system.app';
+import network from "@system.network";
+import router from '@system.router';
+
+import qt from './assets/js/qt_quickapp.js';
+qt.setParams({
+  appKey: 'test_appkey',
+  trackDomain: 'log-api.aplus.emas-poc.com',
+  showLog: true,
+  userid: 'test_user',
+  globalproperty: {
+    a:1,
+    b:2
+  }
+})
+
+const $utils = require('./helper/utils').default
+const $apis = require('./helper/apis').default
+
+/* @desc: 注入方法至全局 global,以便页面调用 */
+const hook2global = global.__proto__ || global
+hook2global.$utils = $utils
+hook2global.$apis = $apis
+
+export default {
+  onCreate() {
+    qt.init();
+    qt.appLaunch();
+
+  },
+  onHide() {
+    qt.appHide();
+  },
+}
+</script>

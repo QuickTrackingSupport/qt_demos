@@ -1,0 +1,4 @@
+<!--plugin/components/hello-compoenent.wxml-->
+<view class="container">
+  <button class="plugin_button" bindtap="testTap">自定义组件中button</button>
+</view>

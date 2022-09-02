@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "plugins": {
+    "myPlugin": {
+      "version": "dev",
+      "provider": "wx761c0bae532a2466",
+      "export": "exportToPlugin.js"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

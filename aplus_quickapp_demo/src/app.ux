@@ -9,8 +9,8 @@ import router from '@system.router';
 
 import qt from './assets/js/qt_quickapp.js';
 qt.setParams({
-  appKey: 'jz6xmiq2r77movkupykszm9m',
-  trackDomain: 'log-api-daily.aplus.emas-poc.com',
+  appKey: 'test_appkey',
+  trackDomain: 'test_domain.com',
   showLog: true,
   userid: 'test_user',
   debugId: 'log_29172104073016_4f91ef5802404421a25ea12c6ca9d5bc_log20220914192438',

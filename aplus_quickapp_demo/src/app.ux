@@ -9,15 +9,29 @@ import router from '@system.router';
 
 import qt from './assets/js/qt_quickapp.js';
 qt.setParams({
-  appKey: 'test_appkey',
-  trackDomain: 'log-api.aplus.emas-poc.com',
+  appKey: 'jz6xmiq2r77movkupykszm9m',
+  trackDomain: 'log-api-daily.aplus.emas-poc.com',
   showLog: true,
   userid: 'test_user',
+  debugId: 'log_29172104073016_4f91ef5802404421a25ea12c6ca9d5bc_log20220914192438',
   globalproperty: {
     a:1,
     b:2
   }
-})
+});
+
+qt.setIds({
+  openid: 'od_xxxxxxxxxxxxxxxxxxx',
+  unionid: 'uid_xxxxxxxxxxxxxxxxxxx',
+  adroidid: 'androidid',
+  advertisingid: 'advertisingid',
+  phonenumber: '18811111111', 
+  mac: '19:7c:d1:dc:3a:f2',
+  oaid: 'oaid',
+  serial: 'serial',
+  deviceId: 'deviceId'
+});
+
 
 const $utils = require('./helper/utils').default
 const $apis = require('./helper/apis').default

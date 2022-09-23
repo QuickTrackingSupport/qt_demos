@@ -14,6 +14,18 @@
       value="欢迎使用"
       onclick="onWelcomeBtnClick"
     />
+    <input
+      class="btn"
+      type="button"
+      value="用户登录"
+      onclick="userLogin"
+    />
+    <input
+      class="btn"
+      type="button"
+      value="用户登出"
+      onclick="userLogout"
+    />
      <!-- 点击跳转详情页 -->
     <input
       class="btn"
@@ -42,6 +54,13 @@ export default {
       uri: '/pages/TestPage',
     })
   },
+  userLogin() {
+    qt.login('myUserId')
+  },
+
+  userLogout() {
+    qt.logoff()
+  }
 }
 </script>
 

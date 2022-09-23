@@ -15,6 +15,12 @@
       value="上报用户属性"
       onclick="sendUserProfile"
     />
+    <input
+      class="btn"
+      type="button"
+      value="自定义点击"
+      onclick="sendCustomEvent"
+    />
 </template>
 
 <script>
@@ -33,16 +39,30 @@ export default {
   },
 
   navigateTo() {
+    qt.sendEvent('nav_clk', {
+      page_name: 'test_page',
+      page_title: '页面title',
+    })
     router.push({
         uri: '/pages/Demo',
     })
   },
 
   sendUserProfile() {
-      qt.sendUserProfile({
-          a: 1,
-          b: 2
-      })
+    console.log('z==========');
+    qt.sendUserProfile({
+        a: 1,
+        b: 2
+    })
+  },
+
+  sendCustomEvent() {
+    qt.sendEvent('test_clk_id', {
+      a: 1,
+      b: 2,
+      page_name: 'test_page',
+      page_title: '页面title',
+    })
   },
 
   onShow() {

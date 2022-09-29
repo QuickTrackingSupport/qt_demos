@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>aplus_mpvue</title>
+    <script>
+      (function(w, d, s, q, i) {
+        w[q] = w[q] || [];
+        var f = d.getElementsByTagName(s)[0],j = d.createElement(s);
+        j.async = true;
+        j.id = 'beacon-aplus';
+        j.src = './aplus_cloud_um.js';
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'aplus_queue', 'xxxxxx');
+
+      //集成应用的appKey
+      aplus_queue.push({
+        action: 'aplus.setMetaInfo',
+        arguments: ['appKey', 'xxxxxx']
+      })
+      //如果是私有云部署还需要在上面那段JS后面紧接着添加日志域名埋点
+      //通常私有云日志服务端域名类似于：quickaplus-web-api.xxx.com.cn, 具体域名要找交付同学要
+      aplus_queue.push({
+        action: 'aplus.setMetaInfo',
+        arguments: ['aplus-rhost-v', 'log-api-daily.aplus.emas-poc.com']
+      });
+      //开启调试模式
+      aplus_queue.push({
+        action: 'aplus.setMetaInfo',
+        arguments: ['DEBUG', true]
+      });
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

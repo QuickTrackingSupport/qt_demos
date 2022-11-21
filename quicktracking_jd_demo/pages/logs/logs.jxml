@@ -1,0 +1,6 @@
+<!--logs.jxml-->
+<view class="container log-list">
+  <block jd:for-items="{{logs}}" jd:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view>

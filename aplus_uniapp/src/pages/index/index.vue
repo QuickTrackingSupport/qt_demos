@@ -14,9 +14,15 @@
       <section class="uni-right">
         <button type="primary" @tap="navigateToPv">页面浏览事件</button>
         <button type="primary" @tap="navigateToClick">点击事件</button>
+        <!-- uniapp构建的微信小程序、支付宝小程序不支持自动曝光埋点 -->
+        <!-- #ifdef H5 -->
         <button type="primary" @tap="navigateToExposure">曝光事件</button>
+        <!-- #endif -->
         <button type="primary" @tap="navigateToCustom">自定义事件</button>
+        <!-- uniapp构建的微信小程序、支付宝小程序不支持可视化埋点 -->
+        <!-- #ifdef H5 -->
         <button type="primary" @tap="navigateToVT">去看可视化demo</button>
+        <!-- #endif -->
       </section>
     </view>
     <view class="uniapp-view">
